@@ -1,0 +1,298 @@
+import 'package:flutter/material.dart';
+import 'package:kampe/constants.dart';
+import 'package:kampe/utils/custom_textformfield.dart';
+import 'package:kampe/utils/rounded_raisedbutton.dart';
+import 'package:kampe/utils/tickt_widget.dart';
+
+class TripCarDetailsScreen extends StatefulWidget {
+  @override
+  _TripCarDetailsScreenState createState() => _TripCarDetailsScreenState();
+}
+
+class _TripCarDetailsScreenState extends State<TripCarDetailsScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            Container(
+              height: 110,
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(
+                left: 20,
+                top: 20,
+              ),
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            "Car Details",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "*Select a car",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              CustomTextFormField(
+                                  hintText: "Toyota",
+                                  suffixIcon: Icon(
+                                    Icons.keyboard_arrow_down,
+                                  )),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          width: 50,
+                                          height: 60,
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: Colors.black,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Center(
+                                            child: Image.asset(
+                                              "assets/images/wheel.png",
+                                              width: 30,
+                                              height: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        SlotWidget(
+                                          number: "1",
+                                          color: Colors.grey,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SlotWidget(
+                                          number: "2",
+                                          color: Colors.grey,
+                                        ),
+                                        SlotWidget(
+                                          number: "3",
+                                          color: Colors.blue,
+                                        ),
+                                        SlotWidget(
+                                          number: "4",
+                                          color: Colors.grey,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SlotWidget(
+                                          number: "5",
+                                          color: Colors.blue,
+                                        ),
+                                        SlotWidget(
+                                          number: "6",
+                                          color: Colors.grey,
+                                        ),
+                                        SlotWidget(
+                                          number: "7",
+                                          color: Colors.blue,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 25,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "*Input price per seat",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    CustomTextFormField(
+                                      hintText: "",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: RoundedRaisedButton(
+                title: "Plan Trip",
+                onPress: () {
+                  // Navigator.of(context).pushNamed(kTicketBookingBoardingScreen);
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SlotWidget extends StatelessWidget {
+  String number;
+  SlotWidget({
+    this.number,
+    this.color,
+  });
+  Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 60,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: color,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "$number",
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          SizedBox(height: 5),
+          Container(
+            width: 30,
+            height: 5,
+            color: color,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class StatusWidget extends StatelessWidget {
+  StatusWidget({
+    this.color,
+    this.title,
+  });
+  Color color;
+  String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          color: color,
+          width: 15,
+          height: 5,
+        ),
+        SizedBox(width: 5),
+        Text(
+          "$title",
+          style: TextStyle(color: Colors.grey),
+        )
+      ],
+    );
+  }
+}

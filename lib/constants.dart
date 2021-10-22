@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+
+const kPrimaryColor = Color(0xff0080F6);
+const kAccentColor = Color(0xffEE7200);
+
+const kDashboardScreen = "dashboardscreen";
+const kDriverDashboardScreen = "driverdashboardscreen";
+const kSearchScreen = "searchscreen";
+const kTicketBookingSeatScreen = "ticketbookingseatscreen";
+const kTicketBookingBoardingScreen = "ticketbookingboardingscreen";
+const kTicketBookingPaymentScreen = "ticketbookingpaymentscreen";
+const kTicketDetailScreen = "ticketdetailscreen";
+const kWalletScreen = "walletscreen";
+const kNotificationsScreen = "notificationsscreen";
+const kDiscountAndNewsScreen = "discountandnews";
+const kAccountAndTripScreen = "accountandtripscreen";
+const kContactScreen = "contactscreen";
+const kEditProfileScreen = "editprofilescreen";
+const kPlanTripScreen = "plantripscreen";
+const kTripCarDetails = "tripcardetails";
+const kDriverTicketDetailScreen = "DriverTickeDetailScreen";
+const kDriverReviewsScreen = "DriverReviewsScreen";
+const kVehiclesAndDocumentScreen = "VehiclesAndDocumentScreen";
+const kVehicleManagementScreen = "VehicleManagementScreen";
+const kAddVehicleScreen = "AddVehicleScreen";
+const kAddDocumentScreenOne = "AddDocumentScreenOne";
+const kAddDocumentScreenTwo = "AddDocumentScreenTwo";
+const kDriverWalletScreen = "DriverWalletScreen";
+const kAuthScreen = "authscreen";
+const kOtpVerificationScreen = "OtpVerificationScreen";
+const kWalkthrough = "walkthrough";
+const kChooseUserScreen = "ChooseUserScreen";
